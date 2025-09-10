@@ -133,11 +133,11 @@
         /* Email Capture */
         .email-capture {
             display: flex;
+            flex-direction: column;
             gap: 15px;
             max-width: 500px;
             margin: 0 auto 20px;
-            flex-wrap: wrap;
-            justify-content: center;
+            align-items: center;
         }
         
         .email-input {
@@ -422,10 +422,7 @@
         
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            .email-capture {
-                flex-direction: column;
-                align-items: center;
-            }
+            /* Email capture now stacks vertically on all devices */
             
             .email-input {
                 width: 100%;

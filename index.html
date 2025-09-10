@@ -150,13 +150,15 @@
         }
         
         .logo {
-            font-family: 'Grandway Display', sans-serif;
-            font-size: 2rem;
-            color: var(--primary-orange);
             text-align: center;
             display: block;
-            letter-spacing: 3px;
-            font-weight: 900;
+        }
+        
+        .logo-image {
+            max-height: 60px;
+            width: auto;
+            max-width: 200px;
+            object-fit: contain;
         }
         
         /* Hero Section */
@@ -510,6 +512,31 @@
                 width: 100%;
             }
             
+            .hero-content {
+                padding: 40px 20px;
+            }
+            
+            .hero h1 {
+                font-size: clamp(2.5rem, 8vw, 4rem);
+                margin-bottom: 15px;
+            }
+            
+            .hero-subtitle {
+                font-size: clamp(1rem, 4vw, 1.4rem);
+                margin-bottom: 30px;
+            }
+            
+            .incentive {
+                font-size: 16px;
+                margin-bottom: 25px;
+                padding: 0 10px;
+            }
+            
+            .logo-image {
+                max-height: 50px;
+                max-width: 150px;
+            }
+            
             .pillars-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
@@ -524,12 +551,19 @@
                 padding: 30px 20px;
             }
             
+            /* Mobile header optimization */
+            header {
+                position: static;
+                box-shadow: none;
+            }
+            
             /* Mobile hero background optimization */
             .hero {
                 background-attachment: scroll;
                 background-position: center top;
                 filter: brightness(1.1) contrast(1.05) saturate(1.05);
                 height: 100vh;
+                padding-top: 0;
             }
         }
     </style>
@@ -543,7 +577,9 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <div class="logo">ARTEMIS</div>
+            <div class="logo">
+                <img src="logo.jpg" alt="Artemis Foods" class="logo-image">
+            </div>
         </div>
     </header>
     
@@ -553,7 +589,7 @@
             <div class="hero-content">
                 <h1>
                     The World's First
-                    <span class="highlight">Bone Marrow-Infused</span>
+                    <span class="highlight">Bone Marrow Infused</span>
                     Beef Stick
                 </h1>
                 
@@ -572,7 +608,7 @@
                         required
                     >
                     <button type="submit" class="submit-btn">
-                        Get Nourished
+                        Get Notified
                     </button>
                     <input type="hidden" name="_next" value="https://bljohnson-cmd.github.io/Artemis/?success=true#hero" />
                 </form>

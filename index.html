@@ -87,7 +87,7 @@
                         linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
                         url('hero-background.jpg'),
                         var(--dark);
-            min-height: 90vh;
+            height: 100vh;
             display: flex;
             align-items: center;
             color: white;
@@ -215,11 +215,9 @@
             transform: translateY(-2px);
         }
         
-        /* Why Section */
+        /* Why Section - Hidden for single page */
         .why-section {
-            padding: 100px 0;
-            background: white;
-            text-align: center;
+            display: none;
         }
         
         .section-title {
@@ -248,13 +246,9 @@
             color: #555;
         }
         
-        /* Ticker Tape */
+        /* Ticker Tape - Hidden for single page */
         .ticker {
-            background: var(--dark);
-            color: var(--cream);
-            padding: 20px 0;
-            overflow: hidden;
-            position: relative;
+            display: none;
         }
         
         .ticker-content {
@@ -284,11 +278,9 @@
             100% { transform: translateX(-50%); }
         }
         
-        /* Four Pillars Section */
+        /* Four Pillars Section - Hidden for single page */
         .pillars {
-            padding: 100px 0;
-            background: linear-gradient(180deg, var(--dark) 0%, #2a2a2a 100%);
-            color: white;
+            display: none;
         }
         
         .pillars-intro {
@@ -352,11 +344,9 @@
             color: var(--light-cream);
         }
         
-        /* CTA Section */
+        /* CTA Section - Hidden for single page */
         .cta {
-            padding: 100px 0;
-            background: var(--tan);
-            text-align: center;
+            display: none;
         }
         
         .cta h2 {
@@ -409,12 +399,9 @@
             }
         }
         
-        /* Footer */
+        /* Footer - Hidden for single page */
         footer {
-            padding: 40px 0;
-            background: var(--dark);
-            color: var(--light-cream);
-            text-align: center;
+            display: none;
         }
         
         .footer-logo {
@@ -456,6 +443,7 @@
                 background-attachment: scroll;
                 background-position: center top;
                 filter: brightness(1.1) contrast(1.05) saturate(1.05);
+                height: 100vh;
             }
         }
     </style>

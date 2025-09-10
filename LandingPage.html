@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artemis Foods - The First Regenerative Beef Stick</title>
+    <meta name="description" content="Pure protein powered by regenerative farming. Join the movement for better beef snacks that heal the land.">
+    
+    <!-- Open Graph for Social -->
+    <meta property="og:title" content="Artemis Foods - Regenerative Beef Sticks">
+    <meta property="og:description" content="The first organic, regenerative beef stick. Better for you, better for the planet.">
+    <meta property="og:image" content="https://eatartemis.com/og-image.jpg">
+    <meta property="og:url" content="https://eatartemis.com">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-orange: #D95E12;
+            --dark-brown: #361C00;
+            --light-cream: #F5F1EA;
+            --cream: #ECE4D7;
+            --tan: #A18B69;
+            --dark: #1F1F1F;
+            --white: #FFFFFF;
+            --shadow: 0px 4px 12px rgba(54, 54, 54, 0.16);
+            --shadow-heavy: 0px 10px 24px rgba(54, 54, 54, 0.2);
+        }
+        
+        body {
+            font-family: 'Outfit', -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light-cream);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Top Bar */
+        .top-bar {
+            background: var(--dark-brown);
+            color: var(--light-cream);
+            padding: 12px 0;
+            text-align: center;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        /* Header */
+        header {
+            background: var(--light-cream);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-family: 'Anton', sans-serif;
+            font-size: 2rem;
+            color: var(--primary-orange);
+            text-align: center;
+            display: block;
+            letter-spacing: 3px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(180deg, rgba(31,31,31,0) 0%, rgba(31,31,31,0.8) 100%), 
+                        linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect fill="%23361C00" width="1920" height="1080"/><circle cx="960" cy="540" r="200" fill="%23D95E12" opacity="0.3"/></svg>'),
+                        var(--dark);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .hero h1 {
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(3rem, 7vw, 6rem);
+            line-height: 1;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--cream);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero h1 .highlight {
+            color: var(--primary-orange);
+            display: block;
+            margin: 10px 0;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            margin-bottom: 40px;
+            color: var(--light-cream);
+            font-weight: 400;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Email Capture */
+        .email-capture {
+            display: flex;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .email-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 18px 25px;
+            font-size: 16px;
+            border: 2px solid transparent;
+            border-radius: 50px;
+            background: white;
+            transition: all 0.3s ease;
+        }
+        
+        .email-input:focus {
+            outline: none;
+            border-color: var(--primary-orange);
+            box-shadow: 0 0 0 4px rgba(217, 94, 18, 0.1);
+        }
+        
+        .submit-btn {
+            padding: 18px 40px;
+            font-size: 16px;
+            font-weight: 700;
+            background: var(--primary-orange);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background: #B54A00;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .incentive {
+            font-size: 18px;
+            color: var(--primary-orange);
+            font-weight: 600;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        /* Mission Pills */
+        .mission-pills {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .pill {
+            padding: 12px 25px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            font-weight: 600;
+            color: var(--light-cream);
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .pill:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        /* Why Section */
+        .why-section {
+            padding: 100px 0;
+            background: white;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            text-align: center;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            color: var(--dark);
+        }
+        
+        .why-subtitle {
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            color: var(--primary-orange);
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .why-text {
+            font-size: 20px;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            color: #555;
+        }
+        
+        /* Ticker Tape */
+        .ticker {
+            background: var(--dark);
+            color: var(--cream);
+            padding: 20px 0;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .ticker-content {
+            display: flex;
+            animation: scroll 20s linear infinite;
+            white-space: nowrap;
+        }
+        
+        .ticker-item {
+            font-family: 'Anton', sans-serif;
+            font-size: 24px;
+            padding: 0 50px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .ticker-item::after {
+            content: '•';
+            color: var(--primary-orange);
+            font-size: 30px;
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        /* Four Pillars Section */
+        .pillars {
+            padding: 100px 0;
+            background: linear-gradient(180deg, var(--dark) 0%, #2a2a2a 100%);
+            color: white;
+        }
+        
+        .pillars-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .pillars-intro h2 {
+            color: var(--cream);
+            margin-bottom: 20px;
+        }
+        
+        .pillars-intro p {
+            font-size: 20px;
+            color: var(--light-cream);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .pillar-card {
+            padding: 40px 30px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .pillar-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.08);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .pillar-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .pillar-card h3 {
+            font-family: 'Anton', sans-serif;
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: var(--primary-orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .pillar-card p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--light-cream);
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: var(--tan);
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: var(--dark);
+            letter-spacing: 2px;
+        }
+        
+        .cta p {
+            font-size: 22px;
+            margin-bottom: 40px;
+            color: var(--dark);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        /* Success Message */
+        .success-message {
+            display: none;
+            padding: 15px 30px;
+            background: #4CAF50;
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            animation: slideIn 0.5s ease;
+            margin-top: 20px;
+        }
+        
+        .success-message.show {
+            display: inline-block;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: var(--dark);
+            color: var(--light-cream);
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--primary-orange);
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .email-capture {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .email-input {
+                width: 100%;
+            }
+            
+            .submit-btn {
+                width: 100%;
+            }
+            
+            .pillars-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .ticker-item {
+                font-size: 18px;
+                padding: 0 30px;
+            }
+            
+            .pillar-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        🔥 Join the Regenerative Revolution - Get 20% OFF 🔥
+    </div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">ARTEMIS</div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>
+                    The First
+                    <span class="highlight">Regenerative</span>
+                    Beef Stick
+                </h1>
+                
+                <p class="hero-subtitle">
+                    We're not just making snacks. We're revolutionizing how beef is raised, 
+                    one regenerative acre at a time.
+                </p>
+                
+                <p class="incentive">🎉 Be First to Know - Get 20% OFF!</p>
+                
+                <form id="heroEmailForm" class="email-capture" action="https://formspree.io/f/xyzdojoz" method="POST">
+                    <input
+                        type="email"
+                        name="email"
+                        class="email-input"
+                        placeholder="Enter your email"
+                        required
+                    >
+                    <button type="submit" class="submit-btn">
+                        Join the Movement
+                    </button>
+                    <input type="hidden" name="_next" value="https://bljohnson-cmd.github.io/Artemis/?success=true#hero" />
+                </form>
+                
+                <div class="success-message" id="heroSuccessMessage">
+                    Welcome to the revolution! Check your email for your exclusive discount.
+                </div>
+                
+                <div class="mission-pills">
+                    <div class="pill">🌱 100% Grass-Fed</div>
+                    <div class="pill">✨ Zero Sugar</div>
+                    <div class="pill">💪 10g Protein</div>
+                    <div class="pill">🌍 Carbon Negative</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Section -->
+    <section class="why-section">
+        <div class="container">
+            <p class="why-subtitle">Our Why</p>
+            <h2 class="section-title">Protein With Purpose</h2>
+            <p class="why-text">
+                The modern food system is broken. Industrial agriculture depletes our soil, 
+                harms our animals, and produces food stripped of nutrients. At Artemis, we believe 
+                there's a better way. By partnering with regenerative ranchers who treat cattle as 
+                nature intended – roaming freely, fertilizing naturally, and healing the land – 
+                we're creating beef sticks that are better for you, better for the animals, 
+                and better for our planet. This isn't just a snack. It's a movement.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Ticker Tape -->
+    <div class="ticker">
+        <div class="ticker-content">
+            <span class="ticker-item">100% GRASS-FED BEEF</span>
+            <span class="ticker-item">REGENERATIVE FARMING</span>
+            <span class="ticker-item">ZERO SUGAR</span>
+            <span class="ticker-item">NO ADDITIVES</span>
+            <span class="ticker-item">CARBON NEGATIVE</span>
+            <span class="ticker-item">100% GRASS-FED BEEF</span>
+            <span class="ticker-item">REGENERATIVE FARMING</span>
+            <span class="ticker-item">ZERO SUGAR</span>
+            <span class="ticker-item">NO ADDITIVES</span>
+            <span class="ticker-item">CARBON NEGATIVE</span>
+        </div>
+    </div>
+    
+    <!-- Four Pillars Section -->
+    <section class="pillars">
+        <div class="container">
+            <div class="pillars-intro">
+                <h2 class="section-title">The Four Pillars of Artemis</h2>
+                <p>Every decision we make is guided by these core principles</p>
+            </div>
+            
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon">🌍</div>
+                    <h3>Heal the Land</h3>
+                    <p>Our cattle restore soil health, sequester carbon, and increase biodiversity through holistic grazing practices that mimic nature's patterns.</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-icon">🐄</div>
+                    <h3>Honor the Animal</h3>
+                    <p>100% grass-fed and finished. No feedlots. No hormones. No antibiotics. Just cattle living as nature intended on open pastures.</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-icon">💪</div>
+                    <h3>Nourish the Body</h3>
+                    <p>Pure, clean protein with zero sugar and no artificial ingredients. Every stick is nutrient-dense fuel your body actually recognizes.</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-icon">🤝</div>
+                    <h3>Support the Farmer</h3>
+                    <p>We partner directly with small regenerative ranches, ensuring fair prices and supporting families committed to healing our food system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Join the Revolution?</h2>
+            <p>Be among the first to experience beef sticks that heal the land while fueling your body.</p>
+            
+            <form id="ctaEmailForm" class="email-capture cta-form" action="https://formspree.io/f/xyzdojoz" method="POST">
+                <input
+                    type="email"
+                    name="email"
+                    class="email-input"
+                    placeholder="Enter your email"
+                    required
+                >
+                <button type="submit" class="submit-btn">
+                    Get Early Access
+                </button>
+                <input type="hidden" name="_next" value="https://bljohnson-cmd.github.io/Artemis/?success=true#cta" />
+            </form>
+            
+            <div class="success-message" id="ctaSuccessMessage">
+                You're in! Check your email for your exclusive 20% discount code.
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">ARTEMIS</div>
+            <p>Regenerating the future, one bite at a time.</p>
+            <p style="margin-top: 20px; font-size: 14px; opacity: 0.8;">&copy; 2024 Artemis Foods. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Handle Formspree success redirects
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success') === 'true') {
+            const hash = window.location.hash;
+            if (hash === '#hero') {
+                document.getElementById('heroSuccessMessage').classList.add('show');
+            } else if (hash === '#cta') {
+                document.getElementById('ctaSuccessMessage').classList.add('show');
+            }
+
+            // Clean up URL after showing success message
+            setTimeout(() => {
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }, 100);
+        }
+    </script>
+</body>
+</html>

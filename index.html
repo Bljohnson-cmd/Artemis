@@ -536,7 +536,7 @@
             }
             
             .hero-content {
-                padding: 20px 20px 40px 20px;
+                padding: 12px 20px 40px 20px;
             }
             
             .hero h1 {
@@ -588,33 +588,32 @@
             header {
                 position: static;
                 box-shadow: none;
-                display: none;
+                display: block;   /* show header logo/wordmark on mobile */
+                margin-bottom: 8px;
             }
             
             .hero-logo-section {
-                display: block;
-                margin-bottom: 45px;
+                display: none;    /* avoid duplicate logo below header */
             }
             
             .hero-logo-image {
-                max-height: 120px;
-                max-width: 280px;
-                display: block;
-                margin: 0 auto;
+                display: none;
             }
             
             .hero-logo-section .logo {
                 text-align: center;
             }
             
-            /* Mobile hero background optimization */
+            /* Mobile hero background & layout optimization */
             .hero {
                 background-attachment: scroll;
                 background-position: center top;
                 filter: brightness(1.1) contrast(1.05) saturate(1.05);
                 min-height: 100svh;
                 min-height: 100dvh;
-                padding-top: env(safe-area-inset-top, 0);
+                align-items: flex-start;  /* ensure headings start fully visible */
+                justify-content: flex-start;
+                padding-top: calc(16px + env(safe-area-inset-top, 0));
                 padding-bottom: calc(40px + env(safe-area-inset-bottom, 0));
             }
         }

@@ -167,18 +167,23 @@
                         linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
                         url('hero-background.jpg'),
                         var(--dark);
-            height: 100vh;
+            /* Use modern viewport units with sensible fallbacks for iOS Safari stability */
+            height: 100vh;            /* legacy fallback */
+            height: 100svh;          /* small viewport height (iOS toolbars considered) */
+            height: 100dvh;          /* dynamic viewport height */
             display: flex;
             align-items: center;
             color: white;
             position: relative;
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            background-attachment: scroll; /* fixed can cause jank on mobile */
             background-repeat: no-repeat;
             filter: brightness(1.2) contrast(1.1) saturate(1.1);
             image-rendering: -webkit-optimize-contrast;
             image-rendering: crisp-edges;
+            padding-top: env(safe-area-inset-top, 0);
+            padding-bottom: env(safe-area-inset-bottom, 0);
         }
         
         .hero-content {
@@ -607,9 +612,10 @@
                 background-attachment: scroll;
                 background-position: center top;
                 filter: brightness(1.1) contrast(1.05) saturate(1.05);
-                min-height: 100vh;
-                padding-top: 0;
-                padding-bottom: 40px;
+                min-height: 100svh;
+                min-height: 100dvh;
+                padding-top: env(safe-area-inset-top, 0);
+                padding-bottom: calc(40px + env(safe-area-inset-bottom, 0));
             }
         }
     </style>

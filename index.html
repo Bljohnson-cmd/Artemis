@@ -188,6 +188,17 @@
             padding: 60px 20px;
         }
         
+        .hero-logo-section {
+            display: none;
+        }
+        
+        .hero-logo-image {
+            max-height: 100px;
+            width: auto;
+            max-width: 300px;
+            object-fit: contain;
+        }
+        
         .hero h1 {
             font-family: 'Grandway', sans-serif;
             font-size: clamp(3rem, 7vw, 6rem);
@@ -502,6 +513,11 @@
         
         /* Mobile Responsive */
         @media (max-width: 768px) {
+            /* Hide top banner on mobile */
+            .top-bar {
+                display: none;
+            }
+            
             /* Email capture now stacks vertically on all devices */
             
             .email-input {
@@ -533,8 +549,8 @@
             }
             
             .logo-image {
-                max-height: 50px;
-                max-width: 150px;
+                max-height: 80px;
+                max-width: 250px;
             }
             
             .pillars-grid {
@@ -555,6 +571,17 @@
             header {
                 position: static;
                 box-shadow: none;
+                display: none;
+            }
+            
+            .hero-logo-section {
+                display: block;
+                margin-bottom: 30px;
+            }
+            
+            .hero-logo-image {
+                max-height: 120px;
+                max-width: 280px;
             }
             
             /* Mobile hero background optimization */
@@ -587,6 +614,12 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
+                <div class="hero-logo-section">
+                    <div class="logo">
+                        <img src="logo.jpg" alt="Artemis Foods" class="hero-logo-image">
+                    </div>
+                </div>
+                
                 <h1>
                     The World's First
                     <span class="highlight">Bone Marrow Infused</span>

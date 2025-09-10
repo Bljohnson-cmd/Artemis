@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artemis Foods - The First Regenerative Beef Stick</title>
+    <title>Artemis Foods - The First Bone Marrow-Infused Beef Stick</title>
     <meta name="description" content="Pure protein powered by regenerative farming. Join the movement for better beef snacks that heal the land.">
     
     <!-- Open Graph for Social -->
@@ -85,7 +85,7 @@
         .hero {
             background: linear-gradient(180deg, rgba(31,31,31,0) 0%, rgba(31,31,31,0.8) 100%), 
                         linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect fill="%23361C00" width="1920" height="1080"/><circle cx="960" cy="540" r="200" fill="%23D95E12" opacity="0.3"/></svg>'),
+                        url('hero-background.jpg'),
                         var(--dark);
             min-height: 90vh;
             display: flex;
@@ -94,6 +94,7 @@
             position: relative;
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
         }
         
         .hero-content {
@@ -445,6 +446,12 @@
             .pillar-card {
                 padding: 30px 20px;
             }
+            
+            /* Mobile hero background optimization */
+            .hero {
+                background-attachment: scroll;
+                background-position: center top;
+            }
         }
     </style>
 </head>
@@ -496,10 +503,10 @@
                 </div>
                 
                 <div class="mission-pills">
-                    <div class="pill">✅ Organic</div>
-                    <div class="pill">✅ Seed Oil Safe</div>
-                    <div class="pill">✅ 100% Grass-Fed & Finished</div>
-                    <div class="pill">✅ 3rd Party Tested</div>
+                    <div class="pill">🌿 Organic</div>
+                    <div class="pill">🛢️ Seed Oil Safe</div>
+                    <div class="pill">🐄 100% Grass-Fed & Finished</div>
+                    <div class="pill">🧪 3rd Party Tested</div>
                 </div>
             </div>
         </div>
@@ -583,13 +590,14 @@
                     required
                 >
                 <button type="submit" class="submit-btn">
-                    Get Early Access
+                    Get Early Access Today
+                
                 </button>
                 <input type="hidden" name="_next" value="https://bljohnson-cmd.github.io/Artemis/?success=true#cta" />
             </form>
             
             <div class="success-message" id="ctaSuccessMessage">
-                You're in! Check your email for your exclusive 20% discount code.
+                You're in! Check your email for your exclusive updates and early access.
             </div>
         </div>
     </section>
